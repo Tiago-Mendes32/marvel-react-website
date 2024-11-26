@@ -3,23 +3,24 @@ header {
   background-color: var(--secundary-color);
   max-width: 100%;
   height: 150px;
+  justify-content: space-between;
 }
 
-.logo {
+header .logo {
   display: flex;
-  width: 380px;
+  width: 350px;
   justify-content: center;
   align-items: center;
 }
 
-.logo h1 {
+header .logo h1 {
   border-right: 2px solid var(--primary-color);
-  padding: 24px 20px 24px 0;
+  padding: 24px 20px 24px 20px;
   color: var(--primary-color);
-  font-size: 38px;
+  font-size: 36px;
 }
 
-.nav {
+header .nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,39 +28,44 @@ header {
   width: 1066px;
 }
 
-.nav-list {
+header .nav-list {
   color: var(--third-color);
   display: flex;
   height: 100%;
-
   align-items: center;
-  font-size: 32px;
+  font-size: 28px;
   gap: 100px;
-  margin: 0px 100px;
+  margin-right: 70px;
 }
 
-.nav-list-item {
+header .nav-list-item {
   list-style: none;
 }
 
-.login-register {
+header .login-register {
   color: var(--third-color);
   display: flex;
   justify-content: space-around;
   height: 100%;
   align-items: center;
-  font-size: 32px;
-  margin-left: 50px;
+  font-size: 28px;
   gap: 50px;
+  margin-right: 50px;
 }
 
-.login {
+header .login {
   border-left: solid 2px var(--third-color);
   padding: 20px 0 20px 60px;
-  margin-left: 10px;
+  font-weight: 600;
 }
 
-.register {
+header .register {
   border-left: solid 2px var(--third-color);
   padding-left: 50px;
+  font-weight: 600;
+}
+
+.selected {
+  border-bottom: 2px solid var(--primary-color);
+  font-weight: 600;
 }
