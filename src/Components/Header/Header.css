@@ -8,7 +8,7 @@ header {
 
 header .logo {
   display: flex;
-  width: 350px;
+  width: 370px;
   justify-content: center;
   align-items: center;
 }
@@ -17,7 +17,7 @@ header .logo h1 {
   border-right: 2px solid var(--primary-color);
   padding: 24px 20px 24px 20px;
   color: var(--primary-color);
-  font-size: 36px;
+  font-size: 34px;
 }
 
 header .nav {

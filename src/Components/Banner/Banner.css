@@ -1,0 +1,32 @@
+.banner {
+  height: 350px;
+  text-align: center;
+  background-image: url("/public/images/characters_banner.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.banner h2 {
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--third-color);
+  padding-top: 80px;
+}
+
+.banner p {
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--third-color);
+  padding-top: 5px;
+}
+
+.banner .text-container {
+  width: 800px;
+  display: flex;
+  text-align: start;
+}
