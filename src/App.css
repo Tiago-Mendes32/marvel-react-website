@@ -6,6 +6,7 @@
 }
 
 :root {
+  --font-family: "Roboto Condensed", sans-serif;
   --primary-color: #ff0000;
   --secundary-color: #2d2d2e;
   --third-color: #dadada;

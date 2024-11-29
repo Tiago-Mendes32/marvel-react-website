@@ -1,0 +1,17 @@
+.card-section {
+  padding: 20px;
+}
+
+.card-section .cards {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-section h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 30px 100px;
+  letter-spacing: -1px;
+}
