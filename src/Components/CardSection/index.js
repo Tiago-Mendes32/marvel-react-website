@@ -56,6 +56,31 @@ const CardSection = (props) => {
           image="http://i.annihil.us/u/prod/marvel/i/mg/f/30/50fecad1f395b"
           format="jpg"
         />
+        <Card
+          name="Hawkeye"
+          image="http://i.annihil.us/u/prod/marvel/i/mg/e/90/50fecaf4f101b"
+          format="jpg"
+        />
+        <Card
+          name="Professor X"
+          image="http://i.annihil.us/u/prod/marvel/i/mg/3/e0/528d3378de525"
+          format="jpg"
+        />
+        <Card
+          name="Loki"
+          image="http://i.annihil.us/u/prod/marvel/i/mg/d/90/526547f509313"
+          format="jpg"
+        />
+        <Card
+          name="Black Panther"
+          image="http://i.annihil.us/u/prod/marvel/i/mg/6/60/5261a80a67e7d"
+          format="jpg"
+        />
+        <Card
+          name="Thanos"
+          image="http://i.annihil.us/u/prod/marvel/i/mg/6/40/5274137e3e2cd"
+          format="jpg"
+        />
       </div>
     </section>
   );

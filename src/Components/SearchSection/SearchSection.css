@@ -1,0 +1,16 @@
+.search-form {
+  padding: 30px;
+  background-color: black;
+  margin: 50px 0;
+}
+
+.search-form label {
+  display: block;
+  color: var(--third-color);
+}
+
+.search-form input {
+  background-color: black;
+  border: none;
+  border-bottom: solid 2px var(--third-color);
+}
