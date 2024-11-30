@@ -9,7 +9,7 @@ header {
 header .logo {
   display: flex;
   width: 370px;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 
@@ -35,11 +35,15 @@ header .nav-list {
   align-items: center;
   font-size: 28px;
   gap: 100px;
-  margin-right: 70px;
 }
 
 header .nav-list-item {
   list-style: none;
+  cursor: pointer;
+}
+
+header .nav-list-item:hover {
+  color: var(--primary-color);
 }
 
 header .login-register {
@@ -49,20 +53,28 @@ header .login-register {
   height: 100%;
   align-items: center;
   font-size: 28px;
-  gap: 50px;
-  margin-right: 50px;
 }
 
 header .login {
   border-left: solid 2px var(--third-color);
-  padding: 20px 0 20px 60px;
-  font-weight: 600;
+  padding: 20px 60px;
+  font-weight: 550;
 }
 
 header .register {
   border-left: solid 2px var(--third-color);
-  padding-left: 50px;
-  font-weight: 600;
+  padding: 20px 60px;
+  font-weight: 550;
+}
+
+header .register,
+header .login {
+  cursor: pointer;
+}
+
+header .register:hover,
+header .login:hover {
+  color: var(--primary-color);
 }
 
 .selected {

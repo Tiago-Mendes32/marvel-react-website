@@ -1,5 +1,5 @@
 .search-form {
-  padding: 30px;
+  padding: 60px 60px 100px 60px;
   background-color: black;
   margin: 50px 0;
 }
@@ -7,10 +7,25 @@
 .search-form label {
   display: block;
   color: var(--third-color);
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .search-form input {
-  background-color: black;
+  margin: 30px 0 0 40px;
+  width: 500px;
   border: none;
+  padding: 20px 20px 20px 80px;
   border-bottom: solid 2px var(--third-color);
+  font-size: 24px;
+  color: var(--placeholder-color);
+  background: url("/public/images/search.png");
+  background-position: 20px;
+  background-repeat: no-repeat;
+  color: var(--third-color);
+}
+
+.search-form input::placeholder {
+  color: var(--placeholder-color);
+  font-size: 24px;
 }

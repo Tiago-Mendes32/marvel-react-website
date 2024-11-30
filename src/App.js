@@ -13,7 +13,8 @@ function App() {
         text="Get hooked on a hearty helping of heroes and villains from the humble House of Ideas!"
       />
       <CardSection title="Popular Characters" />
-      <SearchSection label="All Characters" />
+      <SearchSection label="All Characters" placeholder="Character name" />
+      <CardSection />
     </div>
   );
 }
