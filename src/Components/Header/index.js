@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 
-const Header = (props) => {
+const Header = () => {
   return (
     <header>
       <div className="logo">
@@ -8,10 +9,39 @@ const Header = (props) => {
       </div>
       <nav>
         <ul className="nav-list">
-          <li className="nav-list-item selected">Characters</li>
-          <li className="nav-list-item">Comics</li>
-          <li className="nav-list-item">Stories</li>
-          <li className="nav-list-item">Events</li>
+          <li className="nav-list-item">
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) => (isActive ? "selected" : "")}
+            >
+              Characters
+            </NavLink>
+          </li>
+          <li className="nav-list-item">
+            <NavLink
+              to="/comics"
+              className={({ isActive }) => (isActive ? "selected" : "")}
+            >
+              Comics
+            </NavLink>
+          </li>
+          <li className="nav-list-item">
+            <NavLink
+              to="/stories"
+              className={({ isActive }) => (isActive ? "selected" : "")}
+            >
+              Stories
+            </NavLink>
+          </li>
+          <li className="nav-list-item">
+            <NavLink
+              to="/events"
+              className={({ isActive }) => (isActive ? "selected" : "")}
+            >
+              Events
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <div className="login-register">

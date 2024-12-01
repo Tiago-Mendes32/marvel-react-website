@@ -3,15 +3,40 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Character from "./routes/Characters";
+import Comics from "./routes/Comics";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />, // A aplicação principal
+    children: [
+      {
+        path: "/",
+        element: <Character />, // Rota para o componente de personagens
+      },
+      {
+        path: "/comics",
+        element: <Comics />, // Adicione o conteúdo da página de comics
+      },
+      {
+        path: "/stories",
+        element: <div>Stories Page</div>, // Adicione o conteúdo da página de stories
+      },
+      {
+        path: "/events",
+        element: <div>Events Page</div>, // Adicione o conteúdo da página de events
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

@@ -1,15 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Character from "./Pages/Characters";
+import { Outlet } from "react-router-dom";
+import Header from "./Components/Header";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Character />} />
-        </Routes>
-      </BrowserRouter>
+      <Header />
+      <Outlet />
     </div>
   );
 }

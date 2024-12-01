@@ -29,11 +29,9 @@ header .nav {
 }
 
 header .nav-list {
-  color: var(--third-color);
   display: flex;
   height: 100%;
   align-items: center;
-  font-size: 28px;
   gap: 100px;
 }
 
@@ -42,7 +40,13 @@ header .nav-list-item {
   cursor: pointer;
 }
 
-header .nav-list-item:hover {
+header .nav-list-item a {
+  color: var(--third-color);
+  text-decoration: none;
+  font-size: 28px;
+}
+
+header .nav-list-item a:hover {
   color: var(--primary-color);
 }
 

@@ -12,11 +12,12 @@ const api = {
     const offset = index * cards_number;
     try {
       const response = await axios.get(
-        `https://gateway.marvel.com/v1/public/characters?ts=${time_stemp}&apikey=${public_key}&hash=${hash}&offset=${offset}`
+        `https://gateway.marvel.com/v1/public/characters?ts=${time_stemp}&apikey=${public_key}&hash=${hash}&offset=${offset}&limit=${cards_number}`
       );
       return response.data.data.results;
     } catch (error) {
       console.error("Erro ao buscar personagens:", error);
+      return [];
     }
   },
 };

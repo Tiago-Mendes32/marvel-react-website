@@ -1,19 +1,28 @@
 import "./CardSection.css";
 import Card from "../Card";
 
-const CardSection = (props) => {
+const CardSection = ({ title, characters = [] }) => {
   return (
     <section className="card-section">
-      {props.title && <h3>{props.title}</h3>}
+      {title && <h3>{title}</h3>}
       <div className="cards">
-        {Array.from({ length: 15 }).map((_, index) => (
-          <Card
-            key={index}
-            name={``}
-            image="/images/doogpowl.png"
-            format="png"
-          />
-        ))}
+        {characters.length > 0
+          ? characters.map((character) => (
+              <Card
+                key={character.name}
+                name={character.name}
+                image={character.image}
+                format={character.format}
+              />
+            ))
+          : Array.from({ length: 15 }).map((_, index) => (
+              <Card
+                key={`empty-${index}`}
+                name=""
+                image="/images/doogpowl"
+                format="png"
+              />
+            ))}
       </div>
     </section>
   );
