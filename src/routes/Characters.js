@@ -35,6 +35,14 @@ const Characters = () => {
     }
   }, [data]);
 
+  const handleNextPage = () => {
+    setIndex((prevIndex) => prevIndex + 1);
+    window.scrollTo({
+      top: 2100,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <Banner
@@ -44,6 +52,7 @@ const Characters = () => {
       <CardSection title="Popular Characters" characters={charactersList} />
       <SearchSection label="All Characters" placeholder="Character name" />
       <CardSection title="All Characters" characters={characters} />
+      <button onClick={handleNextPage}>Próxima Página</button>
     </>
   );
 };
