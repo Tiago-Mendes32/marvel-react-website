@@ -1,20 +1,15 @@
-import Header from "./Components/Header";
-import Banner from "./Components/Banner";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import CardSection from "./Components/CardSection";
-import SearchSection from "./Components/SearchSection";
+import Character from "./Pages/Characters";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Banner
-        title="Marvel Characters"
-        text="Get hooked on a hearty helping of heroes and villains from the humble House of Ideas!"
-      />
-      <CardSection title="Popular Characters" />
-      <SearchSection label="All Characters" placeholder="Character name" />
-      <CardSection />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Character />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
