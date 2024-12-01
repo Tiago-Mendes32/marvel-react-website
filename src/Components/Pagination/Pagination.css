@@ -1,0 +1,14 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.pagination button {
+  color: var(--primary-color);
+  font-size: 22px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 15px;
+}

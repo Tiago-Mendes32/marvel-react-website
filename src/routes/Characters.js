@@ -4,11 +4,13 @@ import SearchSection from "../Components/SearchSection/index.js";
 import api from "../api.js";
 import charactersList from "../PopularCharactersList.js";
 import { useEffect, useState } from "react";
+import Pagination from "../Components/Pagination/index.js";
 
 const Characters = () => {
   const [index, setIndex] = useState(0);
   const [data, setData] = useState([]);
   const [characters, setCharacters] = useState([]);
+  const [paginationData, setPaginationData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +22,17 @@ const Characters = () => {
       }
     };
 
+    const fetchPaginationData = async () => {
+      try {
+        const response = await api.getPaginationData();
+        setPaginationData(response);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     fetchData();
+    fetchPaginationData();
   }, [index]);
 
   useEffect(() => {
@@ -37,6 +49,22 @@ const Characters = () => {
 
   const handleNextPage = () => {
     setIndex((prevIndex) => prevIndex + 1);
+    autoScroll();
+  };
+
+  const handlePreviousPage = () => {
+    if (index > 0) {
+      setIndex((prevIndex) => prevIndex - 1);
+      autoScroll();
+    }
+  };
+
+  const handleSpecificPage = (newIndex) => {
+    setIndex(newIndex);
+    autoScroll();
+  };
+
+  const autoScroll = () => {
     window.scrollTo({
       top: 2100,
       behavior: "smooth",
@@ -51,8 +79,19 @@ const Characters = () => {
       />
       <CardSection title="Popular Characters" characters={charactersList} />
       <SearchSection label="All Characters" placeholder="Character name" />
-      <CardSection title="All Characters" characters={characters} />
-      <button onClick={handleNextPage}>Próxima Página</button>
+      <CardSection characters={characters} />
+
+      {paginationData ? (
+        <Pagination
+          nextFunction={handleNextPage}
+          previousFunction={handlePreviousPage}
+          specificFunction={handleSpecificPage}
+          paginationData={paginationData}
+          currentIndex={index}
+        />
+      ) : (
+        <div>Loading pagination...</div>
+      )}
     </>
   );
 };
