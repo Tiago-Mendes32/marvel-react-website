@@ -8,7 +8,6 @@ header {
 
 header .logo {
   display: flex;
-  width: 370px;
   justify-content: end;
   align-items: center;
 }
