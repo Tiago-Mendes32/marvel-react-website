@@ -79,6 +79,7 @@ const Characters = () => {
       />
       <CardSection title="Popular Characters" characters={charactersList} />
       <SearchSection label="All Characters" placeholder="Character name" />
+
       <CardSection characters={characters} />
 
       {paginationData ? (
