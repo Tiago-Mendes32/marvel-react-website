@@ -5,10 +5,13 @@
 }
 
 .pagination button {
-  color: var(--primary-color);
   font-size: 22px;
   font-weight: 500;
   background: none;
   border: none;
   padding: 15px;
+}
+
+.active {
+  color: var(--primary-color);
 }

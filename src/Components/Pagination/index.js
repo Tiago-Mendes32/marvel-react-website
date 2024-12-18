@@ -3,24 +3,21 @@ import "./Pagination.css";
 const Pagination = (props) => {
   const maxPage = props.paginationData.maxPage;
   const currentIndex = props.currentIndex;
-  const range = 2; // Define quantos botões aparecem antes e depois da página atual.
+  const range = 2;
 
-  // Calcula o intervalo de páginas
   const startPage = Math.max(currentIndex - range, 1);
   const endPage = Math.min(currentIndex + range, maxPage);
 
-  // Se a página atual for menor que 5, mostramos as primeiras 5 páginas
-  const showFirstPages = currentIndex < 5;
+  const showFirstPages = currentIndex < 4;
 
-  // Gera os botões de páginas dinâmicos
   const pageButtons = [];
+
   if (showFirstPages) {
-    // Exibe as primeiras 5 páginas
     for (let i = 1; i <= 5 && i <= maxPage; i++) {
       pageButtons.push(
         <button
           key={i}
-          onClick={() => props.specificFunction(i - 1)} // Subtraia 1 para alinhar ao índice
+          onClick={() => props.specificFunction(i - 1)}
           className={currentIndex === i - 1 ? "active" : ""}
         >
           {i}
@@ -28,12 +25,11 @@ const Pagination = (props) => {
       );
     }
   } else {
-    // Caso contrário, exibe páginas dentro do intervalo
-    for (let i = startPage; i <= endPage; i++) {
+    for (let i = startPage + 1; i <= endPage + 1; i++) {
       pageButtons.push(
         <button
           key={i}
-          onClick={() => props.specificFunction(i - 1)} // Subtraia 1 para alinhar ao índice
+          onClick={() => props.specificFunction(i - 1)}
           className={currentIndex === i - 1 ? "active" : ""}
         >
           {i}
@@ -46,26 +42,32 @@ const Pagination = (props) => {
     <div className="pagination">
       <button
         onClick={props.previousFunction}
-        disabled={currentIndex === 0} // Desabilita se estiver na primeira página
+        disabled={currentIndex === 0}
+        className="prev-next-buttons"
       >
         PREVIOUS
       </button>
-      {currentIndex >= 5 || startPage > 1 ? (
+
+      {currentIndex >= 4 || startPage > 1 ? (
         <button onClick={() => props.specificFunction(0)}>1</button>
       ) : null}
-      {currentIndex >= 5 || startPage > 2 ? <span>...</span> : null}{" "}
-      {/* Reticências antes */}
+
+      {currentIndex >= 4 || startPage > 2 ? <span>...</span> : null}
+
       {pageButtons}
-      {endPage < maxPage - 1 ? <span>...</span> : null}{" "}
-      {/* Reticências depois */}
+
+      {endPage < maxPage - 1 ? <span>...</span> : null}
+
       {endPage < maxPage && (
         <button onClick={() => props.specificFunction(maxPage - 1)}>
           {maxPage}
         </button>
       )}
+      {console.log(`Index: ${currentIndex} Variavel: ${showFirstPages}`)}
       <button
         onClick={props.nextFunction}
-        disabled={currentIndex === maxPage - 1} // Desabilita se estiver na última página
+        disabled={currentIndex === maxPage - 1}
+        className="prev-next-buttons"
       >
         NEXT
       </button>
