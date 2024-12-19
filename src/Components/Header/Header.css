@@ -10,6 +10,11 @@ header .logo {
   display: flex;
   justify-content: end;
   align-items: center;
+  text-decoration: none;
+}
+
+.no-underline {
+  text-decoration: none; /* Remove o sublinhado */
 }
 
 header .logo h1 {

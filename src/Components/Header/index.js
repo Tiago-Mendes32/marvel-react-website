@@ -4,9 +4,11 @@ import "./Header.css";
 const Header = () => {
   return (
     <header>
-      <div className="logo">
-        <h1>MARVEL FANDOM</h1>
-      </div>
+      <NavLink to="/" end className={"no-underline"}>
+        <div className="logo">
+          <h1>MARVEL FANDOM</h1>
+        </div>
+      </NavLink>
       <nav>
         <ul className="nav-list">
           <li className="nav-list-item">

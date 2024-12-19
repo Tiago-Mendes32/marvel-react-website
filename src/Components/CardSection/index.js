@@ -9,6 +9,7 @@ const CardSection = ({ title, characters = [] }) => {
         {characters.length > 0
           ? characters.map((character) => (
               <Card
+                id={character.id}
                 key={character.name}
                 name={character.name}
                 image={character.image}

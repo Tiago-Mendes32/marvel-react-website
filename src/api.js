@@ -36,6 +36,19 @@ const api = {
     }
   },
 
+  async getCharacterData(id) {
+    try {
+      const response = await axios.get(
+        `https://gateway.marvel.com/v1/public/characters/${id}?ts=${time_stemp}&apikey=${public_key}&hash=${hash}`
+      );
+      const characters = await response.data.data.results;
+      return characters[0];
+    } catch (error) {
+      console.error("Error searching dataMax:", error);
+      return null;
+    }
+  },
+
   async getPaginationData() {
     try {
       const response = await axios.get(

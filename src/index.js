@@ -6,27 +6,32 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Character from "./routes/Characters";
 import Comics from "./routes/Comics";
+import CharacterDetails from "./routes/CharacterDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />, // A aplicação principal
+    element: <App />,
     children: [
       {
         path: "/",
-        element: <Character />, // Rota para o componente de personagens
+        element: <Character />,
+      },
+      {
+        path: "/character/:id",
+        element: <CharacterDetails />,
       },
       {
         path: "/comics",
-        element: <Comics />, // Adicione o conteúdo da página de comics
+        element: <Comics />,
       },
       {
         path: "/stories",
-        element: <div>Stories Page</div>, // Adicione o conteúdo da página de stories
+        element: <div>Stories Page</div>,
       },
       {
         path: "/events",
-        element: <div>Events Page</div>, // Adicione o conteúdo da página de events
+        element: <div>Events Page</div>,
       },
     ],
   },
